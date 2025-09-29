@@ -1,0 +1,1569 @@
+// Go88Logo.scss
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.go88-container {
+  background: radial-gradient(
+    ellipse at center,
+    #8b6914 0%,
+    #5d4409 20%,
+    #4a3300 40%,
+    #2d1f00 70%,
+    #1a1200 85%,
+    #000000 100%
+  );
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial Black", sans-serif;
+  overflow: hidden;
+  position: relative;
+
+  // Background Light Effects
+  .light-rays {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 1200px;
+    background: radial-gradient(
+      circle,
+      rgba(255, 215, 0, 0.4) 0%,
+      rgba(255, 215, 0, 0.2) 25%,
+      rgba(255, 165, 0, 0.1) 50%,
+      transparent 75%
+    );
+    animation: lightPulse 4s ease-in-out infinite;
+    z-index: 1;
+  }
+
+  .light-burst {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(
+      circle,
+      transparent 30%,
+      rgba(255, 215, 0, 0.3) 40%,
+      rgba(255, 140, 0, 0.2) 60%,
+      transparent 80%
+    );
+    animation: lightBurst 3s ease-in-out infinite;
+    z-index: 1;
+  }
+
+  .radial-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(
+      ellipse,
+      rgba(255, 215, 0, 0.6) 0%,
+      rgba(255, 215, 0, 0.3) 30%,
+      transparent 70%
+    );
+    animation: radialGlow 2.5s ease-in-out infinite;
+    z-index: 2;
+  }
+
+  // Bokeh Effects
+  .bokeh-effects {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+
+    .bokeh {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      animation: bokehFloat var(--duration, 8s) ease-in-out infinite
+        var(--delay, 0s);
+
+      &.bokeh-1 {
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 215, 0, 0.7),
+          transparent
+        );
+        top: 5%;
+        left: 8%;
+      }
+      &.bokeh-2 {
+        width: 60px;
+        height: 60px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 140, 0, 0.6),
+          transparent
+        );
+        top: 12%;
+        left: 18%;
+      }
+      &.bokeh-3 {
+        width: 45px;
+        height: 45px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 237, 78, 0.8),
+          transparent
+        );
+        top: 20%;
+        left: 5%;
+      }
+      &.bokeh-4 {
+        width: 70px;
+        height: 70px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 165, 0, 0.5),
+          transparent
+        );
+        top: 8%;
+        right: 10%;
+      }
+      &.bokeh-5 {
+        width: 55px;
+        height: 55px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.6),
+          transparent
+        );
+        top: 25%;
+        right: 20%;
+      }
+      &.bokeh-6 {
+        width: 40px;
+        height: 40px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 215, 0, 0.9),
+          transparent
+        );
+        bottom: 15%;
+        left: 12%;
+      }
+      &.bokeh-7 {
+        width: 65px;
+        height: 65px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 140, 0, 0.4),
+          transparent
+        );
+        bottom: 25%;
+        right: 8%;
+      }
+      &.bokeh-8 {
+        width: 50px;
+        height: 50px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 215, 0, 0.8),
+          transparent
+        );
+        top: 35%;
+        left: 15%;
+      }
+      &.bokeh-9 {
+        width: 35px;
+        height: 35px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 165, 0, 0.7),
+          transparent
+        );
+        top: 45%;
+        right: 25%;
+      }
+      &.bokeh-10 {
+        width: 75px;
+        height: 75px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 237, 78, 0.5),
+          transparent
+        );
+        bottom: 35%;
+        left: 25%;
+      }
+      &.bokeh-11 {
+        width: 42px;
+        height: 42px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.8),
+          transparent
+        );
+        top: 15%;
+        right: 35%;
+      }
+      &.bokeh-12 {
+        width: 58px;
+        height: 58px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 215, 0, 0.6),
+          transparent
+        );
+        bottom: 40%;
+        right: 35%;
+      }
+    }
+  }
+
+  // Floating Particles
+  .particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+
+    .particle {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: var(--size);
+      height: var(--size);
+      background: radial-gradient(
+        circle,
+        rgba(255, 215, 0, 0.9),
+        rgba(255, 165, 0, 0.6),
+        transparent
+      );
+      border-radius: 50%;
+      animation: particleFloat var(--duration) ease-in-out infinite var(--delay);
+      filter: blur(0.5px);
+    }
+  }
+
+  // Main Content
+  .main-content {
+    position: relative;
+    text-align: center;
+    z-index: 10;
+    transform: translateY(-50px); // Dịch toàn bộ nội dung lên trên
+
+    .logo-section {
+      position: relative;
+      margin-bottom: 30px; // Giảm khoảng cách với phần URL
+
+      // Cards with Crown (theo ảnh mới)
+      .cards-with-crown {
+        position: absolute;
+        top: -120px; // Điều chỉnh vị trí crown
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 15;
+
+        .crown {
+          font-size: 48px; // Giảm kích thước crown
+          position: absolute;
+          top: -30px;
+          left: 50%;
+          transform: translateX(-50%);
+          animation: crownGlow 3s ease-in-out infinite;
+          filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+          z-index: 20;
+        }
+
+        .cards-fan {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 4px;
+
+          .playing-card {
+            width: 64px; // Giảm kích thước bài
+            height: 88px;
+            background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 100%);
+            border-radius: 10px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 8px 6px;
+            position: relative;
+            animation: cardFloat 4s ease-in-out infinite;
+
+            &.card-1 {
+              transform: rotate(-15deg) translateX(-8px);
+              animation-delay: 0s;
+              z-index: 1;
+            }
+            &.card-2 {
+              transform: rotate(-5deg);
+              animation-delay: 0.5s;
+              z-index: 2;
+            }
+            &.card-3 {
+              transform: rotate(5deg);
+              animation-delay: 1s;
+              z-index: 3;
+            }
+            &.card-4 {
+              transform: rotate(15deg) translateX(8px);
+              animation-delay: 1.5s;
+              z-index: 4;
+            }
+
+            .card-content {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+
+              .card-corner {
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 1;
+                &.red {
+                  color: #d32f2f;
+                }
+                &.black {
+                  color: #333;
+                }
+              }
+
+              .card-suit {
+                font-size: 40px;
+                text-align: center;
+                margin: auto;
+                &.red {
+                  color: #d32f2f;
+                }
+                &.black {
+                  color: #333;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Hexagon Logo (theo ảnh mới)
+      .hexagon-logo {
+        position: relative;
+        display: inline-block;
+        transform: scale(0.8); // Giảm kích thước logo 20%
+
+        .hexagon-border {
+          width: 600px; // Giảm kích thước hexagon
+          height: 256px;
+          background: linear-gradient(
+            45deg,
+            #ffd700 0%,
+            #ffa500 12%,
+            #ffed4e 25%,
+            #ffd700 37%,
+            #ff8c00 50%,
+            #ffd700 62%,
+            #ffa500 75%,
+            #ffed4e 87%,
+            #ffd700 100%
+          );
+          background-size: 400% 400%;
+          clip-path: polygon(
+            10% 0%,
+            90% 0%,
+            100% 50%,
+            90% 100%,
+            10% 100%,
+            0% 50%
+          );
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 0 80px rgba(255, 215, 0, 1),
+            inset 0 0 40px rgba(255, 255, 255, 0.5),
+            0 0 160px rgba(255, 215, 0, 0.6);
+          animation: hexagonGlow 3s ease-in-out infinite,
+            backgroundShift 8s linear infinite;
+          position: relative;
+
+          .logo-text {
+            font-size: 160px; // Giảm kích thước chữ
+            font-weight: 900;
+            color: #2d1f00;
+            text-shadow: 3px 3px 0px #1a1100, 6px 6px 0px #0f0800,
+              9px 9px 0px #050200, 12px 12px 0px rgba(0, 0, 0, 0.4),
+              0 0 40px rgba(255, 215, 0, 0.9);
+            letter-spacing: 14px;
+            position: relative;
+            background: linear-gradient(
+              45deg,
+              #ffd700,
+              #ffed4e,
+              #ffd700,
+              #ff8c00,
+              #ffd700
+            );
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textShine 4s linear infinite,
+              textPulse 2.5s ease-in-out infinite;
+
+            .logo-o-spade {
+              position: relative;
+              display: inline-block;
+
+              .spade-icon {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 80px; // Giảm kích thước spade
+                color: #333;
+                -webkit-text-fill-color: #333;
+                background: none;
+                text-shadow: 0 0 16px rgba(0, 0, 0, 0.8),
+                  1.6px 1.6px 3.2px rgba(0, 0, 0, 0.6);
+                animation: spadeGlow 2s ease-in-out infinite;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Website URL
+    .website-section {
+      .url-container {
+        background: linear-gradient(
+          145deg,
+          rgba(0, 0, 0, 0.9),
+          rgba(20, 15, 10, 0.95)
+        );
+        border: 4px solid #ffd700; // Giảm border
+        border-radius: 20px;
+        padding: 20px 48px; // Giảm padding
+        display: inline-block;
+        box-shadow: 0 0 32px rgba(255, 215, 0, 0.7),
+          inset 0 0 16px rgba(255, 215, 0, 0.1);
+        animation: urlContainerGlow 2.5s ease-in-out infinite;
+        transform: scale(0.8); // Giảm kích thước URL container 20%
+
+        .url-text {
+          font-size: 42px; // Giảm kích thước chữ URL
+          font-weight: bold;
+          color: #ffd700;
+          letter-spacing: 8px;
+          text-shadow: 0 0 24px rgba(255, 215, 0, 0.9),
+            0 0 48px rgba(255, 215, 0, 0.6);
+          animation: urlTextGlow 2s ease-in-out infinite;
+          background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
+          background-size: 200% 200%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+      }
+    }
+  }
+}
+
+// Animations (giữ nguyên)
+@keyframes lightPulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+@keyframes lightBurst {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.25) rotate(180deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes radialGlow {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes bokehFloat {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.7;
+  }
+  33% {
+    transform: translateY(-30px) translateX(15px);
+    opacity: 1;
+  }
+  66% {
+    transform: translateY(-15px) translateX(-10px);
+    opacity: 0.9;
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(-20px) scale(1);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(-350px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-400px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes crownGlow {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7));
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9));
+  }
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: var(--base-transform, rotate(0deg)) translateY(0px);
+  }
+  50% {
+    transform: var(--base-transform, rotate(0deg)) translateY(-15px);
+  }
+}
+
+@keyframes hexagonGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 80px rgba(255, 215, 0, 0.8),
+      inset 0 0 40px rgba(255, 255, 255, 0.4), 0 0 160px rgba(255, 215, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 120px rgba(255, 215, 0, 0.9),
+      inset 0 0 60px rgba(255, 255, 255, 0.6), 0 0 200px rgba(255, 215, 0, 0.8);
+  }
+}
+
+@keyframes backgroundShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes textShine {
+  0% {
+    background-position: -400% 0%;
+  }
+  100% {
+    background-position: 400% 0%;
+  }
+}
+
+@keyframes textPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}
+
+@keyframes spadeGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 16px rgba(0, 0, 0, 0.8),
+      1.6px 1.6px 3.2px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(0, 0, 0, 1), 1.6px 1.6px 4.8px rgba(0, 0, 0, 0.8),
+      0 0 40px rgba(255, 215, 0, 0.4);
+  }
+}
+
+@keyframes urlContainerGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 32px rgba(255, 215, 0, 0.7),
+      inset 0 0 16px rgba(255, 215, 0, 0.1);
+    transform: scale(0.8);
+  }
+  50% {
+    box-shadow: 0 0 48px rgba(255, 215, 0, 0.9),
+      inset 0 0 24px rgba(255, 215, 0, 0.15);
+    transform: scale(0.82);
+  }
+}
+
+@keyframes urlTextGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 24px rgba(255, 215, 0, 0.9),
+      0 0 48px rgba(255, 215, 0, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 36px rgba(255, 215, 0, 0.9),
+      0 0 72px rgba(255, 215, 0, 0.8);
+  }
+}
+
+// Responsive Design
+@media (max-width: 1200px) {
+  .go88-container .main-content {
+    transform: translateY(-40px);
+
+    .logo-section {
+      .hexagon-logo .hexagon-border {
+        width: 480px;
+        height: 205px;
+        .logo-text {
+          font-size: 128px;
+          letter-spacing: 11px;
+          .logo-o-spade .spade-icon {
+            font-size: 64px;
+          }
+        }
+      }
+      .cards-with-crown {
+        top: -100px;
+        .crown {
+          font-size: 38px;
+          top: -25px;
+        }
+        .cards-fan .playing-card {
+          width: 51px;
+          height: 70px;
+          .card-content {
+            .card-corner {
+              font-size: 11px;
+            }
+            .card-suit {
+              font-size: 32px;
+            }
+          }
+        }
+      }
+    }
+    .website-section .url-container {
+      transform: scale(0.7);
+      .url-text {
+        font-size: 34px;
+        letter-spacing: 6px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .go88-container .main-content {
+    transform: translateY(-30px);
+
+    .logo-section {
+      .hexagon-logo .hexagon-border {
+        width: 384px;
+        height: 164px;
+        .logo-text {
+          font-size: 96px;
+          letter-spacing: 8px;
+          .logo-o-spade .spade-icon {
+            font-size: 48px;
+          }
+        }
+      }
+      .cards-with-crown {
+        top: -80px;
+        .crown {
+          font-size: 30px;
+          top: -20px;
+        }
+        .cards-fan .playing-card {
+          width: 41px;
+          height: 56px;
+          .card-content {
+            .card-corner {
+              font-size: 9px;
+            }
+            .card-suit {
+              font-size: 26px;
+            }
+          }
+        }
+      }
+    }
+    .website-section .url-container {
+      padding: 16px 32px;
+      transform: scale(0.6);
+      .url-text {
+        font-size: 26px;
+        letter-spacing: 4px;
+      }
+    }
+  }
+}
+
+// Sửa các keyframes animation để có transition mượt mà
+@keyframes lightPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes lightBurst {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(360deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes radialGlow {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes bokehFloat {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-40px) translateX(20px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) translateX(-15px);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-35px) translateX(15px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.6;
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(-30px) scale(1);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(-300px) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-400px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes crownGlow {
+  0% {
+    transform: translateX(-50%) scale(1);
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1);
+    filter: drop-shadow(0 0 40px rgba(255, 215, 0, 1));
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+  }
+}
+
+@keyframes cardFloat {
+  0% {
+    transform: var(--base-transform, rotate(0deg)) translateY(0px);
+  }
+  50% {
+    transform: var(--base-transform, rotate(0deg)) translateY(-25px);
+  }
+  100% {
+    transform: var(--base-transform, rotate(0deg)) translateY(0px);
+  }
+}
+
+@keyframes hexagonGlow {
+  0% {
+    box-shadow: 0 0 100px rgba(255, 215, 0, 1),
+      inset 0 0 50px rgba(255, 255, 255, 0.5), 0 0 200px rgba(255, 215, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 150px rgba(255, 215, 0, 1),
+      inset 0 0 80px rgba(255, 255, 255, 0.7), 0 0 300px rgba(255, 215, 0, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 100px rgba(255, 215, 0, 1),
+      inset 0 0 50px rgba(255, 255, 255, 0.5), 0 0 200px rgba(255, 215, 0, 0.6);
+  }
+}
+
+@keyframes textPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spadeGlow {
+  0% {
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(0, 0, 0, 1), 2px 2px 6px rgba(0, 0, 0, 0.8),
+      0 0 50px rgba(255, 215, 0, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes urlContainerGlow {
+  0% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.7),
+      inset 0 0 20px rgba(255, 215, 0, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(255, 215, 0, 1),
+      inset 0 0 30px rgba(255, 215, 0, 0.2);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.7),
+      inset 0 0 20px rgba(255, 215, 0, 0.1);
+    transform: scale(1);
+  }
+}
+
+@keyframes urlTextGlow {
+  0% {
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.9),
+      0 0 60px rgba(255, 215, 0, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 50px rgba(255, 215, 0, 1), 0 0 100px rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.9),
+      0 0 60px rgba(255, 215, 0, 0.6);
+  }
+}
+
+// Thêm easing mượt mà hơn cho các animation
+.go88-container {
+  .light-rays {
+    animation: lightPulse 4s ease-in-out infinite;
+  }
+
+  .light-burst {
+    animation: lightBurst 3s ease-in-out infinite;
+  }
+
+  .radial-glow {
+    animation: radialGlow 2.5s ease-in-out infinite;
+  }
+
+  .bokeh-effects .bokeh {
+    animation: bokehFloat var(--duration, 8s) ease-in-out infinite
+      var(--delay, 0s);
+  }
+
+  .particles-container .particle {
+    animation: particleFloat var(--duration) ease-in-out infinite var(--delay);
+  }
+
+  .main-content .logo-section {
+    .cards-with-crown .crown {
+      animation: crownGlow 3s ease-in-out infinite;
+    }
+
+    .hexagon-logo .hexagon-border {
+      animation: hexagonGlow 3s ease-in-out infinite,
+        backgroundShift 8s linear infinite;
+
+      .logo-text {
+        animation: textShine 4s linear infinite,
+          textPulse 2.5s ease-in-out infinite;
+
+        .logo-o-spade .spade-icon {
+          animation: spadeGlow 2s ease-in-out infinite;
+        }
+      }
+    }
+
+    .website-section .url-container {
+      animation: urlContainerGlow 2.5s ease-in-out infinite;
+
+      .url-text {
+        animation: urlTextGlow 2s ease-in-out infinite;
+      }
+    }
+  }
+}
+// Sửa các keyframes để tạo vòng lặp liên tục không gián đoạn
+@keyframes lightPulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+@keyframes lightBurst {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.25) rotate(180deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes radialGlow {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes bokehFloat {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.7;
+  }
+  33% {
+    transform: translateY(-30px) translateX(15px);
+    opacity: 1;
+  }
+  66% {
+    transform: translateY(-15px) translateX(-10px);
+    opacity: 0.9;
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(-20px) scale(1);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(-350px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-400px) scale(0);
+    opacity: 0;
+  }
+}
+
+// Sử dụng animation-direction: alternate để tạo chuyển động qua lại mượt mà
+@keyframes crownGlow {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7));
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9));
+  }
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: var(--base-transform, rotate(0deg)) translateY(0px);
+  }
+  50% {
+    transform: var(--base-transform, rotate(0deg)) translateY(-15px);
+  }
+}
+
+@keyframes hexagonGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 80px rgba(255, 215, 0, 0.8),
+      inset 0 0 40px rgba(255, 255, 255, 0.4), 0 0 150px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 120px rgba(255, 215, 0, 0.9),
+      inset 0 0 60px rgba(255, 255, 255, 0.6), 0 0 200px rgba(255, 215, 0, 0.7);
+  }
+}
+
+@keyframes textPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}
+
+@keyframes spadeGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.7), 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(0, 0, 0, 0.9), 1px 1px 5px rgba(0, 0, 0, 0.7),
+      0 0 40px rgba(255, 215, 0, 0.4);
+  }
+}
+
+@keyframes urlContainerGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6),
+      inset 0 0 15px rgba(255, 215, 0, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(255, 215, 0, 0.8),
+      inset 0 0 25px rgba(255, 215, 0, 0.15);
+    transform: scale(1.01);
+  }
+}
+
+@keyframes urlTextGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8),
+      0 0 40px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 35px rgba(255, 215, 0, 0.9),
+      0 0 70px rgba(255, 215, 0, 0.7);
+  }
+}
+
+// Sửa các animation để sử dụng alternate và giảm thời gian
+.go88-container {
+  .light-rays {
+    animation: lightPulse 3s ease-in-out infinite;
+  }
+
+  .light-burst {
+    animation: lightBurst 4s ease-in-out infinite;
+  }
+
+  .radial-glow {
+    animation: radialGlow 2s ease-in-out infinite;
+  }
+
+  .bokeh-effects .bokeh {
+    animation: bokehFloat 6s ease-in-out infinite;
+  }
+
+  .particles-container .particle {
+    animation: particleFloat 4s linear infinite;
+  }
+
+  .main-content .logo-section {
+    .cards-with-crown .crown {
+      animation: crownGlow 2s ease-in-out infinite;
+    }
+
+    .cards-fan .playing-card {
+      &.card-1 {
+        animation: cardFloat 3s ease-in-out infinite 0s;
+      }
+      &.card-2 {
+        animation: cardFloat 3s ease-in-out infinite 0.75s;
+      }
+      &.card-3 {
+        animation: cardFloat 3s ease-in-out infinite 1.5s;
+      }
+      &.card-4 {
+        animation: cardFloat 3s ease-in-out infinite 2.25s;
+      }
+    }
+
+    .hexagon-logo .hexagon-border {
+      animation: hexagonGlow 2s ease-in-out infinite,
+        backgroundShift 6s linear infinite;
+
+      .logo-text {
+        animation: textShine 3s linear infinite,
+          textPulse 2s ease-in-out infinite;
+
+        .logo-o-spade .spade-icon {
+          animation: spadeGlow 1.5s ease-in-out infinite;
+        }
+      }
+    }
+
+    .website-section .url-container {
+      animation: urlContainerGlow 2s ease-in-out infinite;
+
+      .url-text {
+        animation: urlTextGlow 1.5s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+// Thêm CSS variable để điều chỉnh timing
+.go88-container {
+  --animation-timing: ease-in-out;
+
+  .bokeh-effects .bokeh {
+    &.bokeh-1 {
+      --duration: 7s;
+      --delay: 0s;
+    }
+    &.bokeh-2 {
+      --duration: 8s;
+      --delay: 1s;
+    }
+    &.bokeh-3 {
+      --duration: 6s;
+      --delay: 2s;
+    }
+    &.bokeh-4 {
+      --duration: 9s;
+      --delay: 0.5s;
+    }
+    &.bokeh-5 {
+      --duration: 7s;
+      --delay: 1.5s;
+    }
+    &.bokeh-6 {
+      --duration: 8s;
+      --delay: 2.5s;
+    }
+    &.bokeh-7 {
+      --duration: 6s;
+      --delay: 3s;
+    }
+    &.bokeh-8 {
+      --duration: 7s;
+      --delay: 0.75s;
+    }
+    &.bokeh-9 {
+      --duration: 8s;
+      --delay: 1.75s;
+    }
+    &.bokeh-10 {
+      --duration: 6s;
+      --delay: 2.75s;
+    }
+    &.bokeh-11 {
+      --duration: 7s;
+      --delay: 3.5s;
+    }
+    &.bokeh-12 {
+      --duration: 8s;
+      --delay: 0.25s;
+    }
+  }
+
+  .particles-container .particle {
+    animation: particleFloat var(--duration, 4s) linear infinite
+      var(--delay, 0s);
+  }
+}
+.go88-container {
+  // Thêm ảnh nền mờ - KHÔNG ảnh hưởng các phần tử hiện có
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../image/auth/2025-09-27_23-13.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1; // Độ mờ rất nhẹ
+    z-index: 0; // Đặt dưới tất cả
+  }
+
+  // Đảm bảo tất cả phần tử hiện có vẫn hoạt động bình thường
+  // KHÔNG cần thay đổi z-index của các phần tử hiện tại
+}
+
+/// chống copy inspect ,...
+///
+/// // Chống copy và selection
+.go88-container {
+  // Chống select text
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  // Chống kéo hình ảnh
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+
+  // Chống context menu (click phải)
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+// Chống selection trên toàn bộ phần tử trong container
+.go88-container * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: auto !important;
+}
+
+// Ẩn text cursor trên các phần tử text
+.logo-text,
+.url-text,
+.playing-card {
+  cursor: default;
+}
+
+// Chống copy hình ảnh
+.hexagon-border,
+.playing-card,
+.cards-fan {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+
+  // Thêm layer bảo vệ
+  &::selection {
+    background: transparent;
+  }
+  &::-moz-selection {
+    background: transparent;
+  }
+}
+
+// Vô hiệu hóa selection highlight
+.logo-text::selection,
+.url-text::selection,
+.hexagon-border::selection {
+  background: transparent;
+  color: inherit;
+}
+
+.logo-text::-moz-selection,
+.url-text::-moz-selection,
+.hexagon-border::-moz-selection {
+  background: transparent;
+  color: inherit;
+}
+
+// phần button đangw nhập đăng ký
+
+.buttons-section {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 10;
+  transform: translateY(60px);
+
+  .auth-button {
+    padding: 5px 10px;
+    font-size: 26px;
+    font-weight: 900;
+    border: 4px solid rgb(95, 88, 88);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9e830b;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+
+    // Đường mờ chia đôi
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(128, 128, 128, 0.3) 20%,
+        rgba(128, 128, 128, 0.5) 50%,
+        rgba(128, 128, 128, 0.3) 80%,
+        transparent 100%
+      );
+      z-index: 1;
+    }
+
+    // Làm chữ dày hơn bằng text-shadow đậm
+    text-shadow: 0.5px 0.5px 0px rgba(0, 0, 0, 1),
+      1px 1px 0px rgba(0, 0, 0, 0.6), 1.5px 1.5px 0px rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+    }
+
+    &:active {
+      transform: translateY(1px) scale(0.98);
+    }
+  }
+
+  .login-button {
+    background: linear-gradient(
+      to bottom,
+      #ffd700 0%,
+      #ffd700 45%,
+      #b8860b 55%,
+      #b8860b 100%
+    );
+    border-color: #daa520;
+
+    &:hover {
+      background: linear-gradient(
+        to bottom,
+        #fff8dc 0%,
+        #fff8dc 45%,
+        #daa520 55%,
+        #daa520 100%
+      );
+      border-color: #ffd700;
+    }
+  }
+
+  .register-button {
+    background: linear-gradient(
+      to bottom,
+      #ffed4e 0%,
+      #ffed4e 45%,
+      #d4af37 55%,
+      #d4af37 100%
+    );
+    border-color: #ffd700;
+    box-shadow: 0 5px 25px rgba(255, 237, 78, 0.4);
+
+    &:hover {
+      background: linear-gradient(
+        to bottom,
+        #fff8dc 0%,
+        #fff8dc 45%,
+        #ffd700 55%,
+        #ffd700 100%
+      );
+      border-color: #fff8dc;
+      box-shadow: 0 12px 35px rgba(255, 237, 78, 0.6);
+    }
+  }
+}
+
+/// scss phần tải hỗ trọ
+///
+///
+
+.icon-buttons-section {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 10;
+  scale: calc(0.8);
+  .icon-button {
+    width: 140px;
+    height: 140px;
+    background: #000000;
+    border: 3px solid #cc9900; // Vàng gold 80% (#FFD700 * 0.8 = #CC9900)
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #cc9900; // Vàng gold 80%
+
+    .icon {
+      font-size: 80px; // Icon to hơn, chiếm ~60% nút (50px/140px ≈ 35.7%)
+      width: 84px; // 60% của 140px
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      color: #cc9900;
+      // :nth-child(1) {
+      //   font-size: 80px;
+      // }
+    }
+
+    .text {
+      font-size: 16px;
+      font-weight: bold;
+      color: #cc9900;
+      text-align: center;
+    }
+
+    &:hover {
+      transform: translateX(-8px) scale(1.1);
+      background: #1a1200;
+      border-color: #ffd700;
+      box-shadow: 0 10px 30px rgba(204, 153, 0, 0.4);
+      color: #ffd700;
+
+      .icon,
+      .text {
+        color: #ffd700;
+      }
+    }
+
+    &:active {
+      transform: translateX(-4px) scale(0.95);
+    }
+  }
+}
+
+/// chữ hỗ trợ
+
+.warning-text {
+  text-align: center;
+  font-size: 26px;
+  color: #ffffff;
+  position: absolute;
+  top: calc(100% + 80px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  white-space: nowrap;
+  // Xóa width: 100% và thêm padding nếu cần
+  padding: 0 20px;
+
+  .website-link {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+
+    &:hover {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+  }
+}
