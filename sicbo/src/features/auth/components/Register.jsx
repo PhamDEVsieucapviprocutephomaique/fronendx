@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import "../components/Register.scss";
-
+import axios from "axios";
+import { login } from "../../../utils/api";
+import { useNavigate } from "react-router-dom";
 const Register = ({ onClose }) => {
   const canvasRef = useRef(null);
   const [captchaText, setCaptchaText] = useState("");
@@ -11,12 +13,12 @@ const Register = ({ onClose }) => {
     captcha: "",
   });
   const [errors, setErrors] = useState("");
-
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setformdata({ ...formdata, [e.target.name]: e.target.value });
   };
 
-  const handelsubmit = (e) => {
+  const handelsubmit = async (e) => {
     e.preventDefault();
 
     // bỏ khoảng trống và chuyển username về dạng chữ thường
@@ -28,7 +30,6 @@ const Register = ({ onClose }) => {
           : formdata[key].trim();
     }
     setformdata(updatedData);
-    console.log(updatedData);
     // validate
     if (!/^[A-Za-z0-9]{6,}$/.test(formdata.username)) {
       setErrors("tai khoan khong hop le ");
@@ -51,8 +52,36 @@ const Register = ({ onClose }) => {
       setErrors("Ma xac thuc khong dung");
       return;
     }
-
-    onClose();
+    const submitData = {
+      username: formdata.username.trim().toLowerCase(),
+      password: formdata.password,
+    };
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/api/account/register/",
+        submitData
+      );
+      // dang nhap vao sau khi dang ky
+      try {
+        const result = await login(submitData.username, submitData.password);
+        if (result.success) {
+          navigate("/home");
+          onClose(); // Đóng modal nếu có
+        } else {
+          setErrors(result.error || "Đăng nhập thất bại");
+        }
+      } catch (error) {
+        setErrors("Error connect");
+      }
+    } catch (error) {
+      if (error.response) {
+        // Lỗi từ server (4xx, 5xx)
+        setErrors(error.response.data.errors || "Đăng ký thất bại");
+      } else {
+        // Lỗi kết nối
+        setErrors("Lỗi kết nối server");
+      }
+    }
   };
   useEffect(() => {
     if (errors) {

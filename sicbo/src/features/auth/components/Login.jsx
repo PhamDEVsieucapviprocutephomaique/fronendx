@@ -1,5 +1,8 @@
 import "./Login.scss";
 import React, { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { login } from "../../../utils/api";
+
 const Login = ({ onClose }) => {
   const canvasRef = useRef(null);
   const [captchaText, setCaptchaText] = useState("");
@@ -9,13 +12,14 @@ const Login = ({ onClose }) => {
     captcha: "",
   });
   const [errors, setErrors] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setformdata({ ...formdata, [e.target.name]: e.target.value });
   };
   // validate
 
-  const handelsubmit = (e) => {
+  const handelsubmit = async (e) => {
     e.preventDefault();
 
     // Xử lý dữ liệu - bỏ khoảng trống và chuyển username về chữ thường
@@ -43,9 +47,17 @@ const Login = ({ onClose }) => {
       setErrors("Mã xác thực không đúng");
       return;
     }
-    
-
-    onClose();
+    try {
+      const result = await login(updatedData.username, updatedData.password);
+      if (result.success) {
+        navigate("/home");
+        onClose(); // Đóng modal nếu có
+      } else {
+        setErrors(result.error || "Đăng nhập thất bại");
+      }
+    } catch (error) {
+      setErrors("Error connect");
+    }
   };
   // 3 giaay thif thong bao mat
   useEffect(() => {
