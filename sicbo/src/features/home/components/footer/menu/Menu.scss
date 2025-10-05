@@ -1,0 +1,265 @@
+.side-menu-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.side-menu-container {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 280px;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 30, 30, 0.98) 0%,
+    rgba(50, 50, 50, 0.95) 50%,
+    rgba(30, 30, 30, 0.98) 100%
+  );
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 15px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 215, 0, 0.3);
+  overflow: hidden;
+  border: 1px solid green;
+}
+
+.side-menu-content {
+  padding: 15px 0;
+}
+
+.side-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 215, 0, 0.15) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 215, 0, 0.15) 100%
+    );
+
+    .side-menu-icon {
+      color: #ffd700;
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+    }
+
+    .side-menu-text {
+      color: #ffd700;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 215, 0, 0.3),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+.side-menu-icon {
+  font-size: 1.4rem;
+  color: #b8b8b8;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.side-menu-text {
+  color: #e6e6e6;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng ánh sáng cho container */
+.side-menu-container {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 215, 0, 0.2),
+      transparent
+    );
+    transform: rotate(45deg);
+    animation: sideMenuShine 3s infinite;
+  }
+}
+
+@keyframes sideMenuShine {
+  0% {
+    transform: rotate(45deg) translateX(-100%);
+  }
+  100% {
+    transform: rotate(45deg) translateX(100%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .side-menu-container {
+    bottom: 70px;
+    right: 15px;
+    width: 260px;
+  }
+
+  .side-menu-item {
+    padding: 14px 20px;
+  }
+
+  .side-menu-icon {
+    font-size: 1.3rem;
+  }
+
+  .side-menu-text {
+    font-size: 0.95rem;
+  }
+}
+
+//
+.side-menu-container {
+  position: absolute;
+  bottom: 120px; // Sát dưới cùng
+  right: 100px; // Sát phải cùng
+  width: 250px; // Nhỏ hơn chút
+  // ... giữ nguyên các style khác
+}
+//
+
+/* Tăng font-size và thêm đường ngang vàng */
+.side-menu-container {
+  bottom: 120px;
+  right: 100px;
+  width: 250px; // Giữ nguyên hoặc tăng lên chút
+  border: 1px solid rgba(255, 215, 0, 0.6); // Viền vàng đậm hơn
+  filter: drop-shadow(
+    0 0 10px rgba(255, 215, 0, 0.4)
+  ); // Thêm shadow vàng sắc nét
+}
+
+.side-menu-content {
+  padding: 10px 0;
+}
+
+.side-menu-item {
+  padding: 18px 25px; // Tăng padding cho to hơn
+  gap: 18px;
+  position: relative;
+
+  /* Thêm đường ngang vàng chói ở dưới mỗi item */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 215, 0, 0.8),
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 215, 0, 0.8),
+      transparent
+    );
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+  }
+
+  /* Loại bỏ đường ngang ở item cuối */
+  &:last-child::after {
+    display: none;
+  }
+}
+
+.side-menu-icon {
+  font-size: 1.6rem; // Tăng size icon
+  filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.4)); // Thêm shadow cho icon
+}
+
+.side-menu-text {
+  font-size: 1.1rem; // Tăng size chữ
+  font-weight: 700; // Chữ đậm hơn
+  letter-spacing: 1px; // Giãn chữ
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); // Thêm shadow chữ
+}
+
+/* Tăng độ sắc nét cho toàn bộ */
+.side-menu-wrapper {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.side-menu-container {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Hiệu ứng ánh sáng mạnh hơn */
+.side-menu-container::before {
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 215, 0, 0.3),
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  animation: sideMenuShine 2.5s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .side-menu-container {
+    bottom: 100px;
+    right: 50px;
+    width: 260px;
+  }
+
+  .side-menu-item {
+    padding: 16px 22px;
+  }
+
+  .side-menu-icon {
+    font-size: 1.5rem;
+  }
+
+  .side-menu-text {
+    font-size: 1rem;
+  }
+}
