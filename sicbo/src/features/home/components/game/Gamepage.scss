@@ -1,0 +1,569 @@
+.gamepage {
+  width: 100%;
+  height: 790px;
+  margin: auto;
+  background: url("../../../../image/home/body/tạo\ ảnh\ sòng\ bạc\ màu\ siêu\ lấp\ lánh\ siêu\ đẹp\ bạch\ kim\ rất\ đẹp\ trông\ tả\ thực\ khá\ huyền\ ảo\ \,\ lấp\ lánh\ chỗ\ sáng\ tối\ \ nhìn\ ảo\ ảo\ thực\ thực.jpg")
+    no-repeat center center;
+  background-size: cover;
+  color: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 80px 0px;
+
+  // ================= HEADER SECTION =================
+  .gamepage-header {
+    padding: 0;
+    // backdrop-filter: blur(20px);
+    // border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    // border: 1px solid red;
+    width: 100%;
+
+    .header-menu {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 160px;
+      height: 50px;
+      position: relative;
+      //   border: 1px solid red;
+      background: rgba(128, 128, 128, 0.02);
+
+      mask: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(128, 128, 128) 12%,
+          rgba(128, 128, 128) 88%,
+          transparent 100%
+        ),
+        linear-gradient(
+          0deg,
+          transparent 0%,
+          rgba(128, 128, 128) 25%,
+          rgba(128, 128, 128) 50%,
+          rgba(128, 128, 128) 75%,
+          transparent 100%
+        );
+      z-index: 0 !important;
+      .menu-item {
+        z-index: 10 !important;
+        flex: 0 0 auto;
+        width: 160px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        .wrapmenulabel {
+          width: 100%;
+          height: 100%;
+          clip-path: polygon(
+            11% 0%,
+            89% 0%,
+            100% 50%,
+            89% 100%,
+            11% 100%,
+            0% 50%
+          );
+          /* Màu vàng pha bạch kim siêu sắc nét */
+          background: linear-gradient(
+            135deg,
+            #667eea 0%,
+            /* Tím xanh nhạt */ #764ba2 25%,
+            /* Tím đậm */ #f093fb 50%,
+            /* Hồng pastel */ #f5576c 75%,
+            /* Hồng cam */ #4facfe 100% /* Xanh dương sáng */
+          );
+          padding: 4px;
+          filter: brightness(1.1) contrast(1.2);
+          transition: all 0.3s ease;
+
+          .menu-label {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Màu xám pha bạch kim siêu nét */
+            background: linear-gradient(
+              135deg,
+              rgba(0, 0, 0, 0.9) 35%,
+              rgb(68, 66, 50) 70%,
+              #6d5662 100%
+            );
+            padding: 2px;
+            clip-path: polygon(
+              11% 0%,
+              89% 0%,
+              100% 50%,
+              89% 100%,
+              11% 100%,
+              0% 50%
+            );
+            font-size: 20px !important;
+            font-weight: 800;
+            color: #ffd700; // Màu chữ vàng
+            text-shadow: 0 0 1px rgba(255, 215, 0, 0.5);
+            filter: contrast(1.3) saturate(1.4);
+            transition: all 0.3s ease;
+          }
+        }
+
+        .line-left {
+          position: absolute;
+          top: 50%;
+          right: calc(100% - 4px);
+          width: 100px;
+          height: 5px;
+          background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255, 215, 0, 0.1) 20%,
+            rgba(255, 215, 0, 0.4) 50%,
+            rgba(255, 215, 0, 0.7) 80%,
+            rgba(255, 215, 0, 0.9) 100%
+          );
+          transform: translateY(-50%);
+          box-shadow: 0 0 4px rgba(255, 215, 0, 0.5);
+          mask: linear-gradient(90deg, black 0%, black 70%, transparent 100%);
+          transition: all 0.3s ease;
+        }
+
+        .line-right {
+          position: absolute;
+          top: 50%;
+          left: calc(100% - 4px);
+          width: 100px;
+          height: 5px;
+          background: linear-gradient(
+            90deg,
+            rgba(255, 215, 0, 0.9) 0%,
+            rgba(255, 215, 0, 0.7) 20%,
+            rgba(255, 215, 0, 0.4) 50%,
+            rgba(255, 215, 0, 0.1) 80%,
+            transparent 100%
+          );
+          transform: translateY(-50%);
+          box-shadow: 0 0 4px rgba(255, 215, 0, 0.5);
+          mask: linear-gradient(90deg, transparent 0%, black 30%, black 100%);
+          transition: all 0.3s ease;
+        }
+
+        // ================= HOVER EFFECT =================
+        &:hover {
+          .wrapmenulabel {
+            // Wrap giữ nguyên màu vàng, chỉ tăng độ sáng
+            filter: brightness(1.3) contrast(1.4);
+
+            .menu-label {
+              // Chỉ menu-label đổi sang background đỏ
+              background: linear-gradient(
+                135deg,
+                rgba(255, 0, 0, 0.8) 35%,
+                rgba(200, 0, 0, 0.7) 70%,
+                rgba(180, 0, 0, 0.8) 100%
+              );
+              color: rgb(255, 255, 255, 0.6); // Chữ trắng khi hover
+              //   text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+            }
+          }
+
+          .line-left {
+            background: linear-gradient(
+              90deg,
+              transparent 0%,
+              rgba(255, 0, 0, 0.3) 20%,
+              rgba(255, 0, 0, 0.6) 50%,
+              rgba(255, 0, 0, 0.8) 80%,
+              rgba(255, 0, 0, 0.9) 100%
+            );
+            box-shadow: 0 0 6px rgba(255, 0, 0, 0.7);
+            height: 6px;
+            width: 110px;
+          }
+
+          .line-right {
+            background: linear-gradient(
+              90deg,
+              rgba(255, 0, 0, 0.9) 0%,
+              rgba(255, 0, 0, 0.8) 20%,
+              rgba(255, 0, 0, 0.6) 50%,
+              rgba(255, 0, 0, 0.3) 80%,
+              transparent 100%
+            );
+            box-shadow: 0 0 6px rgba(255, 0, 0, 0.7);
+            height: 6px;
+            width: 110px;
+          }
+        }
+
+        // ================= ACTIVE EFFECT =================
+        &.active {
+          .wrapmenulabel {
+            // Wrap giữ nguyên màu vàng, chỉ tăng độ sáng
+            filter: brightness(1.5) contrast(1.6);
+            animation: pulse-gold 1.5s ease-in-out infinite alternate;
+
+            .menu-label {
+              // Chỉ menu-label đổi sang background đỏ đậm
+              background: linear-gradient(
+                135deg,
+                rgba(200, 0, 0, 0.95) 35%,
+                rgba(160, 0, 0, 0.9) 70%,
+                rgba(140, 0, 0, 0.95) 100%
+              );
+              color: #ffffff; // Chữ trắng khi active
+              //   text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+              animation: text-red-glow 1.5s ease-in-out infinite alternate;
+            }
+          }
+
+          .line-left {
+            background: linear-gradient(
+              90deg,
+              transparent 0%,
+              rgba(255, 0, 0, 0.5) 20%,
+              rgba(255, 0, 0, 0.8) 50%,
+              rgba(255, 0, 0, 0.9) 80%,
+              rgba(255, 0, 0, 1) 100%
+            );
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.9);
+            height: 7px;
+            animation: line-left-pulse 1.5s ease-in-out infinite alternate;
+          }
+
+          .line-right {
+            background: linear-gradient(
+              90deg,
+              rgba(255, 0, 0, 1) 0%,
+              rgba(255, 0, 0, 0.9) 20%,
+              rgba(255, 0, 0, 0.8) 50%,
+              rgba(255, 0, 0, 0.5) 80%,
+              transparent 100%
+            );
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.9);
+            height: 7px;
+            animation: line-right-pulse 1.5s ease-in-out infinite alternate;
+          }
+        }
+      }
+    }
+  }
+
+  // ================= MAIN CONTENT SECTION =================
+  .gamepage-content {
+    display: flex;
+    flex: 1;
+    padding: 10px 0;
+    padding-left: 50px;
+    // background: rgba(0, 0, 0, 0.2);
+
+    // Left Panel - Small
+    .left-panel {
+      flex: 0 0 340px;
+      // height: 100%;
+      border: 1px solid gold;
+      background: url("../../../../image/home/body/vongquyamaymanv.jpg")
+        no-repeat center center !important;
+      background-size: cover !important;
+    }
+
+    .right-panel {
+      flex: 1;
+      // border: 1px solid red;
+      display: flex;
+      flex-direction: row;
+      gap: 46px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      cursor: grab;
+      padding: 10px;
+      padding-left: 40px;
+      //
+
+      &:active {
+        cursor: grabbing;
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      .panel-item {
+        min-width: 340px;
+        width: 360px;
+        height: 100%;
+        // border: 2px solid black;
+        flex-shrink: 0;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // font-size: 24px;
+        // color: white;
+        // transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+    }
+  }
+}
+
+// ================= ANIMATIONS =================
+@keyframes pulse-gold {
+  0% {
+    filter: brightness(1.5) contrast(1.6);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  100% {
+    filter: brightness(1.8) contrast(1.9);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
+  }
+}
+
+// @keyframes text-red-glow {
+//   0% {
+//     text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+//     box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.3);
+//   }
+//   100% {
+//     text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+//       0 0 15px rgba(255, 255, 255, 0.8);
+//     box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.5);
+//   }
+// }
+
+@keyframes line-left-pulse {
+  0% {
+    width: 100px;
+    opacity: 0.8;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 0, 0, 0.3) 20%,
+      rgba(255, 0, 0, 0.6) 50%,
+      rgba(255, 0, 0, 0.8) 80%,
+      rgba(255, 0, 0, 0.9) 100%
+    );
+  }
+  100% {
+    width: 120px;
+    opacity: 1;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 0, 0, 0.6) 20%,
+      rgba(255, 0, 0, 0.9) 50%,
+      rgba(255, 0, 0, 1) 80%,
+      rgba(255, 0, 0, 1) 100%
+    );
+  }
+}
+
+@keyframes line-right-pulse {
+  0% {
+    width: 100px;
+    opacity: 0.8;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.9) 0%,
+      rgba(255, 0, 0, 0.8) 20%,
+      rgba(255, 0, 0, 0.6) 50%,
+      rgba(255, 0, 0, 0.3) 80%,
+      transparent 100%
+    );
+  }
+  100% {
+    width: 120px;
+    opacity: 1;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 1) 0%,
+      rgba(255, 0, 0, 1) 20%,
+      rgba(255, 0, 0, 0.9) 50%,
+      rgba(255, 0, 0, 0.6) 80%,
+      transparent 100%
+    );
+  }
+}
+
+// ================= RESPONSIVE DESIGN =================
+@media (max-width: 768px) {
+  .gamepage {
+    height: 500px;
+    margin: 50px auto;
+    padding: 40px 0px;
+
+    .gamepage-header {
+      .header-menu {
+        height: 45px;
+        padding: 0 80px;
+
+        .menu-item {
+          width: 80px;
+          height: 35px;
+
+          .line-left,
+          .line-right {
+            width: 30px;
+          }
+
+          .menu-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.2px;
+          }
+
+          &.active {
+            .line-left,
+            .line-right {
+              animation: line-pulse-mobile 1.5s ease-in-out infinite alternate;
+            }
+
+            .line-left {
+              animation: line-left-pulse-mobile 1.5s ease-in-out infinite
+                alternate;
+            }
+
+            .line-right {
+              animation: line-right-pulse-mobile 1.5s ease-in-out infinite
+                alternate;
+            }
+          }
+        }
+      }
+    }
+
+    .gamepage-content {
+      padding: 15px;
+      padding-left: 30px;
+      gap: 15px;
+
+      .left-panel {
+        flex: 0 0 100px;
+
+        .temp-border-box {
+          font-size: 0.8rem;
+        }
+      }
+
+      .right-panel {
+        .red-border-area {
+          font-size: 0.9rem;
+          padding: 15px;
+        }
+      }
+    }
+  }
+}
+
+// Mobile animations
+@keyframes line-pulse-mobile {
+  0% {
+    height: 5px;
+    box-shadow: 0 0 6px rgba(255, 0, 0, 0.9);
+  }
+  100% {
+    height: 7px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 1), 0 0 14px rgba(255, 0, 0, 0.7);
+  }
+}
+
+@keyframes line-left-pulse-mobile {
+  0% {
+    width: 30px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 40px;
+    opacity: 1;
+  }
+}
+
+@keyframes line-right-pulse-mobile {
+  0% {
+    width: 30px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 40px;
+    opacity: 1;
+  }
+}
+
+//
+
+.menu-item {
+  // ================= HOVER EFFECT =================
+  &:hover {
+    .wrapmenulabel {
+      .menu-label {
+        color: #ffffff;
+        text-shadow: none;
+      }
+    }
+  }
+
+  // ================= ACTIVE EFFECT =================
+  &.active {
+    .wrapmenulabel {
+      .menu-label {
+        color: #ffffff !important;
+      }
+    }
+  }
+}
+
+///
+///
+///
+.right-panel {
+  // THÊM NHỮNG DÒNG NÀY ĐỂ FIX LỖI SỌC
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  -webkit-overflow-scrolling: touch;
+
+  .panel-item {
+    transform: translateZ(0); // QUAN TRỌNG
+    backface-visibility: hidden;
+    will-change: transform; // Tối ưu render
+  }
+}
+.panel-item {
+  transform: translate3d(0, 0, 0);
+  isolation: isolate;
+
+  > * {
+    // QUAN TRỌNG: Giữ nguyên transform layer
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
+.wrap-border-txx {
+  // THÊM DÒNG NÀY
+  contain: strict; // Quan trọng: cách ly render
+}
+
+.wrap-txx {
+  // ĐẢM BẢO KHÔNG CÓ TRANSFORM/ANIMATION KHI SCROLL
+  &:active {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.right-panel {
+  overflow: hidden !important; // Quan trọng
+
+  .panel-item {
+    overflow: hidden !important;
+
+    > * {
+      overflow: hidden !important;
+    }
+  }
+}

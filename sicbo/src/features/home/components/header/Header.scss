@@ -40,7 +40,14 @@
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
     background: linear-gradient(#000, #000) padding-box,
-      linear-gradient(to bottom, #fff5a5, #ffd700, #ffb300, #e68a00) border-box;
+      linear-gradient(
+        135deg,
+        #ffd700 0%,
+        #fff8dc 25%,
+        #ffec8b 50%,
+        #fffacd 75%,
+        #ffd700 100%
+      );
     border: 6px solid transparent;
     border-top: none;
   }
